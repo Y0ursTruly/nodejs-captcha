@@ -13,8 +13,11 @@ var captcha = require("nodejs-captcha");
 var possible_options=[
   //a string as the argument below(will be the text used in the captcha)
   "specific t3xt",
-  //an object as the argument below(with all the possible keys), but do note that charset would only be used if there is no value
-  {length:11, value:"thegr3ywo1f", charset:[]},
+  //an object as the argument below(with all the possible keys)
+  {
+    length:11, value:"thegr3ywo1f", charset:['a','b','1','2'], //charset would only be used if there is no value
+    width:100, height:40, numberOfCircles:10  //I don't know why you would manually set these(in this line) but it IS possible
+  },
   //a number used as the argument below(will be the length of text used in the captcha)
   6,
   //undefined as the argument below(nothing, like captcha())
