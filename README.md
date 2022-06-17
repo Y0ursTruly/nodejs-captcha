@@ -10,7 +10,18 @@ Creates Captcha in base64 format
 var captcha = require("nodejs-captcha");
 
 // Create new Captcha
-var newCaptcha = captcha();
+var possible_options=[
+  //a string as the argument below(will be the text used in the captcha)
+  "specific t3xt",
+  //an object as the argument below(with all the possible keys), but do note that charset would only be used if there is no value
+  {length:11, value:"thegr3ywo1f", charset:[]},
+  //a number used as the argument below(will be the length of text used in the captcha)
+  6,
+  //undefined as the argument below(nothing, like captcha())
+  undefined
+]
+let options=possible_options[ Math.floor(Math.random()*possible_options.length) ]
+var newCaptcha = captcha( options );
 
 // Value of the captcha
 var value = newCaptcha.value
