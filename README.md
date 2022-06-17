@@ -16,7 +16,7 @@ var possible_options=[
   //an object as the argument below(with all the possible keys)
   {
     length:11, value:"thegr3ywo1f", charset:['a','b','1','2'], //charset would only be used if there is no value
-    width:100, height:40, numberOfCircles:10  //I don't know why you would manually set these(in this line) but it IS possible
+    width:100, height:40, numberOfCircles:10, image:"base64string"  //I don't know why you would manually set these(in this line) but it IS possible
   },
   //a number used as the argument below(will be the length of text used in the captcha)
   6,
