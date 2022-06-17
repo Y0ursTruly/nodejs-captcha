@@ -16,14 +16,15 @@ const DEFAULT_MIN_CIRCLE = 10;
 const DEFAULT_MAX_CIRCLE = 25;
 
 module.exports = p => {
-  let allowed_types={"undefined":true,"string":true,"object":true}
+  let allowed_types={"undefined":true,"string":true,"object":true,"number":true}
   if(!allowed_types[typeof p]){
-    throw new TypeError("the parameter must either be undefined, an object or a string")
+    throw new TypeError("the parameter must either be undefined, an object a string or a number")
   }
   const params = typeof p==="object"?p:{}
   if(typeof p==="string"){
     params.length=p.length; params.value=p //this allows someone to call captcha(specialText)
   }
+  if(typeof p==="number"){ params.length=p } //this allows someone to call captcha(captchaLength)
   if (params.charset === undefined) {
     params.charset = "1234567890abcdefghijklmnoprstuvyz".split("");
   }
