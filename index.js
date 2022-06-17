@@ -94,6 +94,9 @@ function printText(ctx, params) {
   let value = params.value;
 
   for (let i = 0; i < params.length; i++) {
+    //tilting
+    const tilt=(Math.random()*0.4)-0.2; ctx.rotate(tilt);
+    
     // Font Size
     let fontSize = Math.random() * 20 + 24;
     ctx.font = fontSize + "px serif";
@@ -104,6 +107,8 @@ function printText(ctx, params) {
     // Font Location
     const topMargin = (height - fontSize) * Math.random() / 2.5;
     ctx.fillText(value.charAt(i), 5 + width * i, height / 3 + fontSize - 10 + topMargin);
+    
+    ctx.rotate(tilt*-1) //un-tilting
   }
 }
 function addCircles(ctx, params){
