@@ -1,6 +1,8 @@
 # nodejs-captcha
 Creates Captcha in base64 format
 
+![image](https://user-images.githubusercontent.com/60293767/174325483-4744b726-98d3-4d8e-9e0e-bed85d217970.png)
+
 # installation
 `npm install nodejs-captcha`
 
